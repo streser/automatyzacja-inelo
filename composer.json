@@ -1,0 +1,10 @@
+{
+    "name": "mateusz/automatyzacja",
+    "authors": [
+        {
+            "name": "mfraczkiewicz",
+            "email": "mfraczkiewicz@gbox.pl"
+        }
+    ],
+    "require": {}
+}
