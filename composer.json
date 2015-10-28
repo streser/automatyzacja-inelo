@@ -1,0 +1,10 @@
+{
+    "name": "agata/automatyzacja-inelo",
+    "authors": [
+        {
+            "name": "azaczek",
+            "email": "azaczek@gbox.pl"
+        }
+    ],
+    "require": {}
+}
