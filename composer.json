@@ -1,0 +1,10 @@
+{
+    "name": "marcin/automatyzacja-inelo",
+    "authors": [
+        {
+            "name": "mbyrdziak",
+            "email": "mbyrdziak@gmail.com"
+        }
+    ],
+    "require": {}
+}
