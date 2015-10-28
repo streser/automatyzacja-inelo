@@ -6,5 +6,6 @@
             "email": "mfraczkiewicz@gbox.pl"
         }
     ],
-    "require": {}
+    "require": {
+    "phpunit/phpunit" : "4.5.0"
 }
