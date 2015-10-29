@@ -4,7 +4,7 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 	
 	protected function setUp(){
 		$this->setBrowser('firefox');
-		$this->setBrowserUrl('https://szkolenia.bananascrum.com/');
+		$this->setBrowserUrl('https://szkolenia.bananascrum.com/');	
 	}
 	
 	
@@ -17,9 +17,7 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 		$this->url('/');
 		
 		//when
-		$this->byId('login')->value('admin');
-		$this->byId('password')->value('password');
-		$this->byClassName('button-small')->click();
+		$this->TryLogIn ('admin', 'password');
 		
 		//then
 		//rozwiazanie 1 - najlepsze
@@ -52,16 +50,22 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 		//given
 		$this->url('/');
 	
-		//when
-		$this->byId('login')->value($login);
-		$this->byId('password')->value($pasword);
-		$this->byClassName('button-small')->click();
-	
+		$this->TryLogIn ($login, $pasword);
 		
 		//then
 		$this->assertEquals('Login failed', $this->byId('flash')->text());
 			
 	}
+	
+	/**
+	 * 
+	 */private function TryLogIn($login, $pasword) {
+		//when
+		$this->byId('login')->value($login);
+		$this->byId('password')->value($pasword);
+		$this->byClassName('button-small')->click();
+	}
+
 
 
 }
