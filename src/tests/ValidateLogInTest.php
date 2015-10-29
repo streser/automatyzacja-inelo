@@ -16,6 +16,12 @@ class ValidateLogInTest extends PHPUnit_Extensions_Selenium2TestCase {
 		
 		$this->byName('commit')->click();
 		
-		$this->assertTrue($this->byLinkText('Logout')->displayed());
+		try {
+			$result = $this->byLinkText('Logout')->displayed();
+		} catch (Exception $e) {
+			$this->fail('Nie uda³o siê zalogowaæ');
+		}
+		
+		$this->assertTrue($result);
 	}
 }
