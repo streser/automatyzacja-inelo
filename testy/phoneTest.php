@@ -23,7 +23,7 @@ class phoneTest extends PHPUnit_Framework_TestCase {
 	{
 		return array(
 				array('+48 6633333', True),
-				array('+48666666', True),
+				array('+48666666', False),
 				array('+4812435678901234567890234567', False),
 				array('+48asdf2345678', False)
 		);
