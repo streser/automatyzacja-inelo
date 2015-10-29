@@ -74,8 +74,7 @@ class PhoneValidatorTest extends PHPUnit_Framework_TestCase {
 				array('+1234567'),
 				array('+48 222222222'),
 				array('+48 12345'),
-				array('+48 123456789012'),
-				array('+48 123456789abc')
+				array('+48 123456789012')
 		);
 	}
 	
