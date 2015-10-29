@@ -32,6 +32,36 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 		$this->assertEquals('Logout', $this->byXPath('//div[@class="login-links"]//a[text()="Logout"]')->text());
 		
 	}
+	
+	
+	public function additionProvider()
+	{
+		return array(
+				array('a','b'),
+				array('adsfsd',''),
+				array('','bdfasd'),
+				array('','')
+		);
+	}
+	
+	/**
+	 * @dataProvider additionProvider
+	 */
+	public function testShoulNotdLogIn($login,$pasword) {
+	
+		//given
+		$this->url('/');
+	
+		//when
+		$this->byId('login')->value($login);
+		$this->byId('password')->value($pasword);
+		$this->byClassName('button-small')->click();
+	
+		
+		//then
+		$this->assertEquals('Login failed', $this->byId('flash')->text());
+			
+	}
 
 
 }
