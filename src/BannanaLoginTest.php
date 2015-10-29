@@ -13,7 +13,7 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase
 	public function shouldLogIn()
 	{
 		$this->url('/');
-		$this->byId('login')->value('admin');
+		$this->byClassName('login')->value('admin');
 		$this->byId('password')->value('password');
 		$this->assertEquals('szkolenia', $this->byClassName('domain-name')->text());
 	}
