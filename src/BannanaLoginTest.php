@@ -32,9 +32,11 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase
 	 */
 	public function shoudNotLogin($login, $password)
 	{
+		//given
 		
+		//when
 		$this->tryLogIn($login,$password);
-		$this->byClassName('button-small')->click();
+		//then
 		$this->assertEquals('Login failed', $this->byClassName('flash')->text());
 	}
 	
