@@ -11,12 +11,12 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	public function additionProvider()
 	{
 		return array(
-				array('+48 159786345', 1),
-				array('+48 159786345324324344234242423432423432' , 0),
-				array('124',0),
-				array('123654789',0),
-				array('',0),
-				array('dsafasdf',0)
+				array('+48 159786345', 1,'ShouldPassWhenCorrectPhoneNumber'),
+				array('+48 159786345324324344234242423432423432' , 0, 'ShoutdFalseWhenPhoneNumberTooLong'),
+				array('124',0, 'ShoutdFalseWhenPhoneNumberTooLong'),
+				array('123654789',0, 'ShouldFalseWhenPhoneNumberTooShortPhoneNumber'),
+				array('',0, 'ShouldFailWhenGiveEmptyPhoneNumber'),
+				array('dsafasdf',0, 'ShouldFalseWhenGiveLetterInPhoneNumber')
 				
 		);
 	}
@@ -24,13 +24,13 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider additionProvider
 	 */
-	public function testShouldPhoneNumberCorrect($string, $expected) {
+	public function testShouldPhoneNumberCorrect($string, $expected, $message) {
 	
 		//when
 		$isTrue = $this->validatePhone($string);
 		
 		//then
-		$this->assertEquals($expected, $isTrue);
+		$this->assertEquals($expected, $isTrue, $message);
 	}
 	
 	/**
