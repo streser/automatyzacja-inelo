@@ -22,9 +22,15 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 		$this->byClassName('button-small')->click();
 		
 		//then
-		$this->assertEquals('szkolenia', $this->byClassName('domain-name')->text());
+		//rozwiazanie 1 - najlepsze
+		$this->assertTrue($this->byLinkText('Logout')->displayed());
 		
-
+		//rozwiazanie 2 - najgorsze
+		$this->assertEquals('Logout', $this->byXPath('//div[@class="login-links"]/span[3]')->text());
+		
+		//rozwiazanie 3 - prawie najlepsze
+		$this->assertEquals('Logout', $this->byXPath('//div[@class="login-links"]//a[text()="Logout"]')->text());
+		
 	}
 
 
