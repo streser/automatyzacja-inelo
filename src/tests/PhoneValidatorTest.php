@@ -59,4 +59,45 @@ class PhoneValidatorTest extends PHPUnit_Framework_TestCase {
 		$this->assertFalse(validatePhone($phoneNr));
 	}
 	
+	/**
+	 * @dataProvider correctPhoneNumberProvider
+	 * @test
+	 */
+	public function validateCorrectPhoneNumber($phoneNr) {
+		$this->assertTrue(validatePhone($phoneNr));
+	}
+	
+	public function correctPhoneNumberProvider() {
+		return array(
+				array('+111111111'),
+				array('+48 222222222'),
+				array('+1234567'),
+				array('+48 222222222'),
+				array('+48 12345'),
+				array('+48 123456789012')
+		);
+	}
+	
+	/**
+	 * @dataProvider incorrectPhoneNumberProvider
+	 * @test
+	 */
+	public function validateIncorrectPhoneNumber($phoneNr) {
+		$this->assertFalse(validatePhone($phoneNr));
+	}
+	
+	public function incorrectPhoneNumberProvider() {
+		return array(
+				array('+'),
+				array('+48123456 '),
+				array('+12 34567890123456'),
+				array('48 222222222'),
+				array('abc+48 12345'),
+				array('')
+		);
+	}
+	
+	
+	
+	
 }
