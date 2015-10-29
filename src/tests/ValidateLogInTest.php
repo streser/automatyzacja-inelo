@@ -11,10 +11,8 @@ class ValidateLogInTest extends PHPUnit_Extensions_Selenium2TestCase {
 	public function shouldLogIn() {
 		$this->url('/');
 		
-		$this->byId('login')->value('admin');
-		$this->byId('password')->value('password');
-		
-		$this->byName('commit')->click();
+		$this->tryLogIn ('admin', 'password');
+
 		
 		try {
 			$result = $this->byLinkText('Logout')->displayed();
@@ -26,17 +24,24 @@ class ValidateLogInTest extends PHPUnit_Extensions_Selenium2TestCase {
 	}
 	
 	/**
+	 * 
+	 */
+	 private function tryLogIn($user, $password) {
+		$this->byId('login')->value($user);
+		$this->byId('password')->value($password);
+		
+		$this->byName('commit')->click();
+	}
+
+	
+	/**
 	 * @dataProvider incorrectLoginPasswordProvider
 	 * @test
 	 */
 	public function shouldNotLogIn($login, $pswd) {
 		$this->url('/');
-	
-		$this->byId('login')->value($login);
-		$this->byId('password')->value($pswd);
-	
-		$this->byName('commit')->click();
-	
+		$this->tryLogIn ($login, $pswd);
+		
 		try {
 			$result = $this->byId('forgot-password')->displayed();
 		} catch (Exception $e) {
