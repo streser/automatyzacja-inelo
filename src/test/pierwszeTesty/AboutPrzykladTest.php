@@ -16,7 +16,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 				array('124',0, 'ShoutdFalseWhenPhoneNumberTooLong'),
 				array('123654789',0, 'ShouldFalseWhenPhoneNumberTooShortPhoneNumber'),
 				array('',0, 'ShouldFailWhenGiveEmptyPhoneNumber'),
-				array('dsafasdf',0, 'ShouldFalseWhenGiveLetterInPhoneNumber')
+				array('dsafasdf',1, 'ShouldFalseWhenGiveLetterInPhoneNumber')
 				
 		);
 	}
