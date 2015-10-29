@@ -1,10 +1,11 @@
 {
-    "name": "marcin/automatyzacja-inelo",
-    "authors": [
-        {
-            "name": "mbyrdziak",
-            "email": "mbyrdziak@gmail.com"
-        }
-    ],
-    "require": {}
+	"name" : "marcin/automatyzacja-inelo",
+	"authors" : [{
+			"name" : "mbyrdziak",
+			"email" : "mbyrdziak@gmail.com"
+		}
+	],
+	"require" : {
+		"phpunit/phpunit" : "4.5.0"
+	}
 }
