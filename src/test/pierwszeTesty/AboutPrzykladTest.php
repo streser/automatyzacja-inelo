@@ -8,6 +8,30 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 		return false;
 	}
 	
+	public function additionProvider()
+	{
+		return array(
+				array('+48 159786345', 1),
+				array('+48 159786345324324344234242423432423432' , 0),
+				array('124',0),
+				array('123654789',0),
+				array('',0),
+				array('dsafasdf',0)
+				
+		);
+	}
+	
+	/**
+	 * @dataProvider additionProvider
+	 */
+	public function testShouldPhoneNumberCorrect($string, $expected) {
+	
+		//when
+		$isTrue = $this->validatePhone($string);
+		
+		//then
+		$this->assertEquals($expected, $isTrue);
+	}
 	
 	/**
 	 * @test
