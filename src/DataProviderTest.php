@@ -8,7 +8,7 @@ class DataTest extends PHPUnit_Framework_TestCase
     public function shoudValidateCorrectPhoneNumber($phone)
     {
     	//when
-		$resoult = validatePhone($phone);
+		$resoult = validatePhone2($phone);
 	
 		//then
 		$this->assertTrue($resoult);
@@ -32,7 +32,7 @@ class DataTest extends PHPUnit_Framework_TestCase
     public function shoudValidateIncorrectPhoneNumber($phone)
     {
     	//when
-    	$resoult = validatePhone($phone);
+    	$resoult = validatePhone2($phone);
     
     	//then
     	$this->assertFalse($resoult);
@@ -51,7 +51,7 @@ class DataTest extends PHPUnit_Framework_TestCase
 }
 
 
-function validatePhone($phone) {
+function validatePhone2($phone) {
 	if (preg_match("/^\+(?:[0-9] ?){6,14}[0-9]$/", $phone)) {
 		return true;
 	}
