@@ -36,7 +36,7 @@ class BananaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 				array('', '')
 		);
 	}
-	public function loginTest() {
+	public function loginTest1() {
 		$this->url ( '/' );
 		
 		$this->byId ( "login" )->value ( $login );
