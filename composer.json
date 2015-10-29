@@ -5,6 +5,8 @@
             "name": "azaczek",
             "email": "azaczek@gbox.pl"
         }
-    ],
-    "require": {}
+	],
+	"require" : {
+		"phpunit/phpunit" : "4.5.0"
+	}
 }
