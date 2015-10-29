@@ -10,59 +10,65 @@ class phoneTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * @test
+	 * @dataProvider additionProvider
 	 */
-public function phoneNumberWithNumbersTrue() {
-	//given
-	$phone = "+48 600366302";
+	public function shouldValidatePhoneNumbers($phoneNumber, $expected) 
+	{
+	$result = validatePhone($phoneNumber);
 	
-	//when
-	$return = validatePhone($phone);
+	$this->assertEquals($result, $expected);
+	}
 	
-	//then
-	$this -> assertTrue($return);
+	public function additionProvider()
+	{
+		return array(
+				array('+48 6633333', True),
+				array('+48666666', True),
+				array('+4812435678901234567890234567', False),
+				array('+48asdf2345678', False)
+		);
 	}
 
-
-/**
- * @test
- */
-public function phoneNumberWithLettersFalse() {
-	//given
-	$phone = "+48 abbbb";
-	
-	//when
-	$return = validatePhone($phone);
-	
-	//then
-	$this -> assertFalse($return);
-	}
-
-/**
-* @test
-*/
-public function phoneNumberTooLongFalse() {
+	/**
+	 * @test
+	 */
+	public function shouldFailedWhenPhoneNumberWithLetters() {
 		//given
-		$phone = "+48 12345678909876543213456789087654";
-	
+		$phone = "+48 abbbb";
+		
 		//when
 		$return = validatePhone($phone);
-	
+		
 		//then
 		$this -> assertFalse($return);
-	}
-
+		}
 	
-/**
-* @test
-*/
-public function phoneNumberTooShortFalse() {
-		//given
-		$phone = "+48 123";
+	/**
+	* @test
+	*/
+	public function shouldFailedWhenPhoneNumberTooLong() {
+			//given
+			$phone = "+48 12345678909876543213456789087654";
+		
+			//when
+			$return = validatePhone($phone);
+		
+			//then
+			$this -> assertFalse($return);
+		}
 	
-		//when
-		$return = validatePhone($phone);
-	
-		//then
-		$this -> assertFalse($return);
-	}
+		
+	/**
+	* @test
+	*/
+	public function shouldFailedWhenPhoneNumberTooShort() {
+			//given
+			$phone = "+48 123";
+		
+			//when
+			$return = validatePhone($phone);
+		
+			//then
+			$this -> assertFalse($return);
+		}
 }
