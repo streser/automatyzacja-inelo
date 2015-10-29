@@ -1,11 +1,11 @@
 <?php
 
-class AssertionsTest extends PHPUnit_Framework_TestCase {
+class validatePhoneFuncionTset extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * @test
 	 */
-	public function GivenPhoneTrue() {
+	public function shoudValidateCorrectPhoneNumber() {
 		//given
 		$phone = "+22 3123122";
 		
@@ -19,7 +19,7 @@ class AssertionsTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function GivenPhoneFalse() {
+	public function shouldValidateIncorrectPhoneNumberWithChars() {
 		//given
 		$phone = "+22 3123122aa^%#$%";
 	
@@ -33,7 +33,7 @@ class AssertionsTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function GivenPhoneNULL() {
+	public function shouldValidateIncorrectPhoneNumberWitchIsNull() {
 		//given
 		$phone = null;
 	
@@ -47,7 +47,7 @@ class AssertionsTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function GivenToShortPhone() {
+	public function shouldValidateIncorrectToShortPhoneNumber() {
 		//given
 		$phone = '+241';
 	
@@ -61,7 +61,7 @@ class AssertionsTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function GivenToLongPhone() {
+	public function shouldValidateIncorrectToLongPhoneNumber() {
 		//given
 		$phone = '+241123123123213123';
 	
