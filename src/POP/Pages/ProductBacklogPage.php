@@ -12,14 +12,14 @@ class ProductBacklogPage
 	
 	public function isOpen()
 	{
-		if ('szkolenia' == $this->driver->byClassName('domain-name')->text())
+		if ('Product backlog' == $this->driver->byClassName('backlog-header-title')->text())
 		{
 			return true;
 		}
 		else
 		{
 			return false;
-	}
+		}
 	}
 
 }
