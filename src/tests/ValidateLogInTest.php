@@ -1,5 +1,9 @@
 <?php
 class ValidateLogInTest extends PHPUnit_Extensions_Selenium2TestCase {
+	
+	/**
+	 * @before
+	 */
 	protected function setUp() {
 		$this->setBrowser('firefox');
 		$this->setBrowserUrl('https://szkolenia.bananascrum.com/');
