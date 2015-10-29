@@ -74,7 +74,7 @@ class validatePhoneFuncionTset extends PHPUnit_Framework_TestCase {
 }
 
 function validatePhone($phone) {
-	if (preg_match("/^\+(?:[0-9] ? ){6,14}[0-9]$/", $phone)) {
+	if (preg_match("/^\+(?:[0-9] ?){6,14}[0-9]$/", $phone)) {
 		return true;
 	}
 	return false;
