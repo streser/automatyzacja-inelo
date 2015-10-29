@@ -42,6 +42,65 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
 	}
 }
 
+class DataTest extends PHPUnit_Framework_TestCase
+{
+	/**
+	 * @dataProvider additionProvider1
+	 * @test
+	 */
+	public function testAdd($a, $b, $expected)
+	{
+		$this->assertEquals($expected, $a + $b);
+	}
+
+	public function additionProvider1()
+	{
+		return array(
+				array(1, 2, 3),
+				array(0, 1, 1),
+				array(1, 0, 1),
+				array(1, 2, 3)
+				);
+	}	
+		
+		/**
+		 *  @dataProvider additionProvider2
+		 *  @test
+		 */
+	public function   shouldToShortValidatePhoneNumber($phone) {
+			$this->assertFalse(validatePhone($phone));
+			}
+	public function additionProvider2()
+	{
+		return array(
+				array('+481234'),
+				array('+481234'),
+				array('+481234'),
+				array('+481234')
+		);
+	}
+	
+	/**
+	 *  @dataProvider additionProvider3
+	 *  @test
+	 */
+	public function   shouldToLongtValidatePhoneNumber($phone) {
+		$this->assertFalse(validatePhone($phone));
+	    }
+	public function additionProvider3()
+	{
+		return array(
+				array('+4812345678999999999'),
+				array('+4812345678999999999'),
+				array('+4812345678999999999'),
+				array('+4812345678999999999')
+		);
+	}
+}
+
+
+
+
 
 // public function shouldTest() {
 // 	$this->asserttue(validatePhone('+48123456789'));
