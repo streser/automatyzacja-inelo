@@ -12,7 +12,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_0_CorrectPhoneNumber() {
+	public function ShouldPassWhenCorrectPhoneNumber() {
 		
 		//giben
 		$phone = "+48 159786345";
@@ -28,7 +28,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_1_TooLong() {
+	public function ShoutdFalseWhenPhoneNumberTooLong() {
 	
 		//giben
 		$phone = "+48 159786345324324344234242423432423432";
@@ -44,7 +44,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_2_TooShortPhoneNumber() {
+	public function ShouldFalseWhenPhoneNumberTooShortPhoneNumber() {
 	
 		//giben
 		$phone = "124";
@@ -60,7 +60,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_3_PhoneNumberWihtNoPlusSign() {
+	public function ShouldFalseWhenPhoneNumberWihtNoPlusSign() {
 	
 		//giben
 		$phone = "123654789";
@@ -76,7 +76,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_4_GiveEmptyPhoneNumber() {
+	public function ShouldFailWhenGiveEmptyPhoneNumber() {
 	
 		//giben
 		$phone = "";
@@ -92,7 +92,7 @@ class AboutPrzykladTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function przykladowyTest_5_GiveLetterInPhoneNumber() {
+	public function ShouldFalseWhenGiveLetterInPhoneNumber() {
 	
 		//giben
 		$phone = "dsafasdf";
