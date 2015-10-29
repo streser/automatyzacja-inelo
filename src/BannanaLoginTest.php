@@ -12,11 +12,40 @@ class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase
 	 */
 	public function shouldLogIn()
 	{
-		$this->url('/');
-		$this->byId('login')->value('admin');
-		$this->byId('password')->value('password');
-		$this->byClassName('button-small')->click();
+		$this->tryLogIn ('admin','password');
+
 		$this->assertEquals('szkolenia', $this->byClassName('domain-name')->text());
+	}
+	/**
+	 * 
+	 */private function tryLogIn($login, $password) {
+		$this->url('/');
+		$this->byId('login')->value($login);
+		$this->byId('password')->value($password);
+		$this->byClassName('button-small')->click();
+	}
+
+	
+	/**
+	 * @dataProvider IncorrectLoginProvider()
+	 * @test
+	 */
+	public function shoudNotLogin($login, $password)
+	{
+		
+		$this->tryLogIn($login,$password);
+		$this->byClassName('button-small')->click();
+		$this->assertEquals('Login failed', $this->byClassName('flash')->text());
+	}
+	
+	public function IncorrectLoginProvider()
+	{
+		return array(
+				'Incorrect password' => array("admin","asd"),
+				'Incorrect login' => array("asd","password"),
+				'Incorrect password and login' => array("asd","asd"),
+				'Incorrect empty password and login' => array("","")
+		);
 	}
 
 }
