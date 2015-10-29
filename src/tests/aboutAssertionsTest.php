@@ -16,28 +16,28 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
 	/**
 	 *  @test
 	 */
-	public function shouldTest() {
+	public function shouldTestCorrectPhoneNumber() {
 		$this->assertTrue(validatePhone('+48123456789'));
 		
 	}
 	/**
 	 *  @test
 	 */
-    public function shouldNotTest() {
+    public function shouldTestIncorrectPhoneNumber() {
 		$this->assertFalse(validatePhone('abc123456789'));
 		
     }
     /**
      *  @test
      */
-	public function shouldToLongPhoneNumber() {
+	public function shouldToLongValidatePhoneNumber() {
 			$this->assertFalse(validatePhone('+4812345678999999999'));
 			
 	}
 	/**
 	 *  @test
 	 */
-    public function   shouldToShortPhoneNumber() {
+    public function   shouldToShortValidatePhoneNumber() {
 				$this->assertFalse(validatePhone('+48'));
 	}
 }
