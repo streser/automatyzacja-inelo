@@ -1,6 +1,6 @@
 <?php
 
-include 'src/POP/Pages/LoginPage.php';
+include_once 'src/POP/Pages/LoginPage.php';
 
 class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
 {

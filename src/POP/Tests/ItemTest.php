@@ -1,5 +1,5 @@
 <?php
-include 'src/POP/Pages/LoginPage.php';
+include_once 'src/POP/Pages/LoginPage.php';
 
 class ItemTest extends PHPUnit_Extensions_Selenium2TestCase
 {
