@@ -1,6 +1,6 @@
 <?php
 include_once('src/POP/Pages/LoginPage.php');
-class bananaLoginTest extends PHPUnit_Extensions_Selenium2TestCase {
+class bananaItemTest extends PHPUnit_Extensions_Selenium2TestCase {
 	
 	/**
 	 * @before
@@ -13,13 +13,13 @@ class bananaLoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 	/**
 	 * @test
 	 */
-	public function shouldLogIn() {
+	public function shouldAddItem() {
 		//given
 		$loginPage = new LoginPage($this);
 		$loginPage->open();
-		//when
 		$productBacklogPage = $loginPage->correctLogin();
-		//then
-		$this->assertTrue($productBacklogPage->isOpened());
+		$productBacklogPage->addItem();
+		$this->assertTrue($productBacklogPage->isAdded());
+		$productBacklogPage->deleteItem();
 	}
 }

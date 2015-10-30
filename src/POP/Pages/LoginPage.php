@@ -1,5 +1,5 @@
 <?php
-include('src/POP/Pages/ProductBacklogPage.php');
+include_once('src/POP/Pages/ProductBacklogPage.php');
 class LoginPage  {
 	
 	/**
