@@ -1,6 +1,6 @@
 <?php
-include('src/tests/POP/Pages/LoginPage.php');
-include('src/tests/POP/Pages/ProductBackLogPage.php');
+include_once('src/tests/POP/Pages/LoginPage.php');
+include_once('src/tests/POP/Pages/ProductBackLogPage.php');
 class bananaLoginTest extends PHPUnit_Extensions_Selenium2TestCase {
 	protected function setUp()
 	{
