@@ -1,5 +1,5 @@
 <?php
-class BananasScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
+class Bananas2ScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 	protected function setUp() {
 		$this->setBrowser ( 'firefox' );
 		$this->setBrowserUrl ( 'https://szkolenia.bananascrum.com' );

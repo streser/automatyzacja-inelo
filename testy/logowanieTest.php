@@ -9,12 +9,15 @@ class BananaScrumTest extends PHPUnit_Extensions_Selenium2TestCase {
 	 * @test
 	 */
 	public function loginTest() {
+		//given
 		$this->url ( '/' );
 		
+		//when
 		$this->byId ( "login" )->value ( 'admin' );
 		$this->byId ( 'password' )->value ( 'password' );
 		$this->byClassName ( 'button-small' )->click ();
 		
+		//then
 		$this->assertEquals ( 'szkolenia', $this->byClassName ( 'domain-name' )->text () );
 	}
 }	
