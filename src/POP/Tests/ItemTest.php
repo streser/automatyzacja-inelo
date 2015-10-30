@@ -1,7 +1,7 @@
 <?php
 include 'src/POP/Pages/LoginPage.php';
 
-class BannanaScrumTest extends PHPUnit_Extensions_Selenium2TestCase
+class ItemTest extends PHPUnit_Extensions_Selenium2TestCase
 {
 
 	protected function setUp()
