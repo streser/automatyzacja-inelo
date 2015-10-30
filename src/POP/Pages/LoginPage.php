@@ -1,6 +1,6 @@
 <?php
 
-include 'BeglogPage.php';
+include_once 'BeglogPage.php';
 
 class LoginPage extends Page {
 	

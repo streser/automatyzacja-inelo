@@ -1,5 +1,5 @@
 <?php
-include 'Page.php';
+include_once 'Page.php';
 class BeglogPage extends Page {
 	
 	/**
